@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4">🌾 Crop Yield Prediction 🌾</h1>
+        <form action="/predict" method="post">
+            <div class="mb-3">
+                <label>Year:</label>
+                <input type="number" name="Year" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Average Rainfall (mm/year):</label>
+                <input type="number" step="any" name="average_rain_fall_mm_per_year" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Pesticides Used (tonnes):</label>
+                <input type="number" step="any" name="pesticides_tonnes" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Average Temperature (°C):</label>
+                <input type="number" step="any" name="avg_temp" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Area (Country/Region):</label>
+                <input type="text" name="Area" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Crop (Wheat, Rice, etc.):</label>
+                <input type="text" name="Item" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Predict Yield</button>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result mt-4 p-3 text-center">
+            <h2>🌱 Predicted Yield: {{ prediction }} hg/ha</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
