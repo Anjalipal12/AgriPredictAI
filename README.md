@@ -106,15 +106,6 @@ Each image has the corresponding disease name for comparison.
 
 ---
 
-## 📸 Screenshots
-
-You can add screenshots of your web interface here (e.g., crop prediction form, disease detection results, etc.)
-
-![Homepage](static/images/home.png)  
-![Prediction Result](static/images/result.png)
-
----
-
 ## 🤝 Contribution Guidelines
 
 - Fork the project and create a new branch
